@@ -16,8 +16,10 @@ class Person {
   });
 
   double get imc {
-    final result = (weight / math.pow(height, 2)) * 100;
+    final imcResult = (weight / math.pow(height, 2)) * 100;
 
-    return result.roundToDouble() / 100;
+    return imcResult.roundToDouble() / 100;
   }
+
+  bool get isOlder => age >= 18;
 }

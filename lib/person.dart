@@ -15,6 +15,15 @@ class Person {
     @required this.weight,
   });
 
+  factory Person.fromMap(Map map) {
+    return Person(
+      name: map['name'] as String,
+      age: map['age'] as int,
+      height: map['height'] as double,
+      weight: map['weight'] as double,
+    );
+  }
+
   double get imc {
     final imcResult = (weight / math.pow(height, 2)) * 100;
 

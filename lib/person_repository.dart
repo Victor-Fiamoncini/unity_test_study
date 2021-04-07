@@ -6,13 +6,12 @@ import 'package:unity_test_study/person.dart';
 
 class PersonRepository {
   final Client client;
+  final String url;
 
-  PersonRepository({@required this.client});
+  PersonRepository({@required this.client, @required this.url});
 
   Future<List<Person>> getPersons() async {
-    final response = await client.get(
-      Uri.tryParse('https://5ecafaf138df960016511b4c.mockapi.io/api/v1/person'),
-    );
+    final response = await client.get(Uri.tryParse(url));
 
     if (response.statusCode == 200) {
       final json = jsonDecode(response.body) as List;

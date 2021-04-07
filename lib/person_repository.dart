@@ -1,10 +1,13 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
+import 'package:meta/meta.dart';
 import 'package:unity_test_study/person.dart';
 
 class PersonRepository {
-  final Client client = Client();
+  final Client client;
+
+  PersonRepository({@required this.client});
 
   Future<List<Person>> getPersons() async {
     final response = await client.get(

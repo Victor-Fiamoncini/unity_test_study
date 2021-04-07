@@ -3,12 +3,14 @@ import 'dart:math' as math;
 import 'package:meta/meta.dart';
 
 class Person {
+  final int id;
   final String name;
   final int age;
   final double height;
   final double weight;
 
   Person({
+    @required this.id,
     @required this.name,
     @required this.age,
     @required this.height,
@@ -17,10 +19,11 @@ class Person {
 
   factory Person.fromMap(Map map) {
     return Person(
+      id: int.tryParse(map['name'].toString()),
       name: map['name'] as String,
       age: map['age'] as int,
-      height: map['height'] as double,
-      weight: map['weight'] as double,
+      height: double.tryParse(map['height'].toString()),
+      weight: double.tryParse(map['weight'].toString()),
     );
   }
 

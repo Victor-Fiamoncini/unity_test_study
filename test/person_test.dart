@@ -5,7 +5,7 @@ void main() {
   Person sut;
 
   setUp(() {
-    sut = Person(name: 'Victor', age: 24, height: 1.77, weight: 64.4);
+    sut = Person(id: 1, name: 'Victor', age: 24, height: 1.77, weight: 64.4);
   });
 
   tearDown(() {});
@@ -20,7 +20,7 @@ void main() {
     });
 
     test('Should "isOlder" be true if age is equal than 18', () {
-      sut = Person(name: 'Victor', age: 18, height: 1.77, weight: 64.4);
+      sut = Person(id: 1, name: 'Victor', age: 18, height: 1.77, weight: 64.4);
 
       expect(sut.isOlder, true);
     });

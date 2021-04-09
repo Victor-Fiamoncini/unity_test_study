@@ -33,7 +33,7 @@ class HomePage extends StatelessWidget {
             if (bloc.state is PersonErrorState) {
               return _ErrorWidget();
             } else if (bloc.state is PersonLoadingState) {
-              return CircularProgressIndicator();
+              return const CircularProgressIndicator();
             }
 
             return _ListWidget();
